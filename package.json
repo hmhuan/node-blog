@@ -1,0 +1,26 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --inspect index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmhuan/node-blog.git"
+  },
+  "author": "hmhuan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hmhuan/node-blog/issues"
+  },
+  "homepage": "https://github.com/hmhuan/node-blog#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
