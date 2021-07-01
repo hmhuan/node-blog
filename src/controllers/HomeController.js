@@ -1,6 +1,6 @@
 class HomeRouter {
     index(req, res) {
-        res.send(`Home page`)
+        res.render('home')
     }
 }
 
