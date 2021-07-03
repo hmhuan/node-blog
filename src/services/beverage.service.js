@@ -17,8 +17,7 @@ class BeverageService {
     }
 
     findById(req, res, next) {
-        // return res.json({message: `find by id: ${req.params.id}`})
-        Beverage.findById({_id: req.params.id})
+        Beverage.findById(req.params.id)
         .then(beverage => {
             if (beverage) {
                 return res.json(beverage)
