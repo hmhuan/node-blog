@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const Food = new Schema({
+    _id: {type: Number},
     name: {type: String},
     desciption: {type: String},
     createdAt: {type: Date, default: Date.now},

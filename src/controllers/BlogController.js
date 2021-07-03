@@ -1,5 +1,5 @@
 class BlogController {
-    index(req, res) {
+    index(req, res, next) {
         res.render('blog')
     }
 }

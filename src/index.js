@@ -5,6 +5,9 @@ const path = require('path')
 const logger = require('./logger')
 const authorize = require('./authorize')
 const router = require('./routers/index.router')
+const db = require('./resource/config/db')
+
+db.connect()
 
 const app = express()
 const PORT= 5000

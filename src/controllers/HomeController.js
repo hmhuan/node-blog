@@ -1,5 +1,5 @@
 class HomeRouter {
-    index(req, res) {
+    index(req, res, next) {
         res.render('home')
     }
 }
