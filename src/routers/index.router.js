@@ -8,7 +8,6 @@ function router(app) {
     app.use('/v1/beverages', beverageRouter)
     app.use('/v1/foods', foodRouter)
     app.use('/blog', blogRouter)
-    // app.use('/v1/*', homeRouter)
     app.use('/*', homeRouter)
 }
 

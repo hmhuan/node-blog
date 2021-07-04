@@ -1,6 +1,6 @@
 const logger = (req, res, next) => {
     const method = req.method
-    const url = req.url
+    const url = req.get('host') + req.url
     const date = new Date()
     console.log(method, url, date)
     next()
