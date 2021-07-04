@@ -1,9 +1,16 @@
-<h1>Beverage</h1>
-<div>
-    <h3>This is beverage page</h3>
-    <ul class="beverages">
-        {{#each beverages}}
-        <li>{{this.name}}</li>
-        {{/each}}
-    </ul>
+<div class="mt-4">
+  <div class="row">
+    {{#each beverages}}
+      <div class="col-sm-6 col-lg-4">
+        <div class="card" style="width: 18rem; margin-top: 14px;">
+          <img class="card-img-top" src="{{this.image}}" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class="card-text">{{this.description}}</p>
+            <a href="./{{this._id}}" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
 </div>
