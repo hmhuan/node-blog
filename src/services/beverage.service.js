@@ -20,6 +20,20 @@ class BeverageService {
                 throw {status: 400, message: "Bad request"}
             })
     }
+
+    findBySlug(slug) {
+        return Beverage.findOne({slug: slug})
+            .then(beverageItem => {
+                if (beverageItem) {
+                    return {beverage:  mongooseUtil.mapObject(beverageItem)}
+                }
+                return {message: "Not found"}
+            })
+            .catch(error => {
+                console.log(`${error}`)
+                throw {status: 400, message: "Bad request"}
+            })
+    }
 }
 
 module.exports = new BeverageService

@@ -3,16 +3,19 @@
     {{#each beverages}}
       <div class="col-sm-6 col-lg-4">
         <div class="card" style="margin-top: 16px;">
+          <a href="/v1/beverages/detail/{{this.slug}}"></a>
           <img
             class="card-img-top"
             src="{{this.image}}"
             alt="{{this.name}}"
             style="width: auto; height: 250px"
           />
+          </a>
+          
           <div class="card-body">
-            <h5 class="card-title">{{this.name}}</h5>
+            <a href="/v1/beverages/detail/{{this.slug}}"><h5 class="card-title">{{this.name}}</h5></a>
             <p class="card-text">{{this.description}}</p>
-            <a href="./{{this._id}}" class="btn btn-primary">Go somewhere</a>
+            <a href="/v1/beverages/detail/{{this.slug}}" class="btn btn-primary">Nhấn em đi</a>
           </div>
         </div>
       </div>

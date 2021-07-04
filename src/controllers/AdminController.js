@@ -1,18 +1,22 @@
-const beverageService = require('../services/beverage.service')
+const beverageService = require('../services/admin.service')
 
-class BeverageController {
+class AdminController {
 
-    async index(req, res) {
+    index(req, res) {
+        res.render('admin')
+    }
+
+    async beverage(req, res) {
         try {
             const beverages = await beverageService.findAll()
 
-            res.render('beverages/beverage', {beverages})
+            res.render('admin', {beverages})
         } catch {
             res.status(404)
         }
     }
 
-    async findById(req, res) {
+    async findBeverageById(req, res) {
         try {
             const id = Number(req.params.id)
             const result = await beverageService.findById(id)
@@ -26,7 +30,7 @@ class BeverageController {
         }
     }
 
-    async findBySlug(req, res) {
+    async findBeverageBySlug(req, res) {
         try {
             const slug = req.params.slug
             const result = await beverageService.findBySlug(slug)
@@ -40,9 +44,9 @@ class BeverageController {
         }
     }
 
-    create(req, res, next) {
+    createBeverage(req, res, next) {
         res.render('beverages/create')
     }
 }
 
-module.exports = new BeverageController;
+module.exports = new AdminController;
