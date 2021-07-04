@@ -1,8 +1,9 @@
 const Beverage = require('../models/Beverage')
-
+const mongooseUtil = require('../utils/mongoose.util')
 class BeverageService {
     findAll() {
         return Beverage.find({})
+         .then(beverages => mongooseUtil.mapObjects(beverages))
     }
 
     findById(id) {
@@ -10,7 +11,7 @@ class BeverageService {
         return Beverage.findById(id)
             .then(beverageItem => {
                 if (beverageItem) {
-                    return {beverage: beverageItem}
+                    return {beverage:  mongooseUtil.mapObject(beverageItem)}
                 }
                 return {message: "Not found"}
             })

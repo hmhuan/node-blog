@@ -5,7 +5,8 @@ class BeverageController {
     async index(req, res) {
         try {
             const beverages = await beverageService.findAll()
-            res.status(200).json(beverages)
+
+            res.render('beverage', {beverages})
         } catch {
             res.status(404)
         }
